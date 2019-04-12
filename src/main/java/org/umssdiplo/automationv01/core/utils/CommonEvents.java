@@ -23,6 +23,7 @@ public class CommonEvents {
         webElement.sendKeys(content);
     }
 
+
     /**
      * This method perform a click action in a web element.
      *

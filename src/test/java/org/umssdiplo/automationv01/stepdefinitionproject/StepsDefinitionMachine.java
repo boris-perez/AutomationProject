@@ -12,22 +12,22 @@ public class StepsDefinitionMachine {
     private Machine machine;
 
 
-    @Given("^The user goes to registration section and register a machine$")
+    @Given("^The user clicks to registration section$")
     public void goRegisterSection() {
         machine.registerMachine();
     }
 
-    @And("^The user goes to machine section$")
+    @And("^The user clicks to machine section$")
     public void goToMachineSection() throws Throwable {
         machine.machineSection();
     }
 
-    @Given("^The user will delete a machine$")
+    @Given("^The user clicks delete a machine in list of machines$")
     public void deleteAMachine() throws Throwable{
         machine.deleteMachine();
     }
 
-    @Given("^The user will edit a machine$")
+    @Given("^The user clicks edit option in list of machines$")
     public void editAMachine() {
         machine.editMachine();
     }
@@ -41,13 +41,14 @@ public class StepsDefinitionMachine {
     public void theMachineWasRegistered() {
 
         String URL = CommonEvents.getCurrentUrl();
-        Assert.assertEquals(URL, "http://localhost:4200/machines/list" );
+        Assert.assertEquals(URL, "http://localhost:4200/machines/create" );
     }
 
     @Then("^The machine was edited$")
     public void theMachineWasEdited() {
+
         String URL = CommonEvents.getCurrentUrl();
-        Assert.assertEquals(URL, "http://localhost:4200/machines/list" );
+        Assert.assertEquals(URL, "http://localhost:4200/machines/update" );
     }
 
     @Then("^The machine was deleted$")

@@ -2,16 +2,16 @@ Feature: machine
 
   Background:
     Given The user enter to home
-    And The user goes to machine section
+    And The user clicks to machine section
 
   Scenario: The user will register a machine
-    Given The user goes to registration section and register a machine
+    Given The user clicks to registration section
     Then The machine was registered
 
-  Scenario: Edit a machine
-    Given The user will edit a machine
+  Scenario: The user will edit a machine
+    Given The user clicks edit option in list of machines
     Then The machine was edited
 
   Scenario: The user will delete a machine
-    Given The user will delete a machine
+    Given The user clicks delete a machine in list of machines
     Then The machine was deleted
