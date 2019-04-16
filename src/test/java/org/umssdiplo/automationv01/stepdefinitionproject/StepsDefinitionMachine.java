@@ -12,46 +12,47 @@ public class StepsDefinitionMachine {
     private Machine machine;
 
 
-    @Given("^The user clicks to registration section$")
+    @Given("^click on 'Register new machine' from lateral menu in 'Machine' page$")
     public void goRegisterSection() {
         machine.registerMachine();
     }
 
-    @And("^The user clicks to machine section$")
+    @And("^click on 'Machine' option from the 'Top Menu' of the main page$")
     public void goToMachineSection() throws Throwable {
         machine.machineSection();
     }
 
-    @Given("^The user clicks delete a machine in list of machines$")
+    @Given("^click on 'delete' option from 'list of machine' in the 'Machine' page$")
     public void deleteAMachine() throws Throwable{
         machine.deleteMachine();
     }
 
-    @Given("^The user clicks edit option in list of machines$")
+    @Given("^click on 'edit' option from 'list of machine' in the 'Machine' page$")
     public void editAMachine() {
         machine.editMachine();
     }
 
-    @Given("^The user enter to home$")
+    @Given("^'Care4You' page is loaded$")
     public void theUserEnterToHome() {
         machine = LoadPage.loginPage();
     }
 
-    @Then("^The machine was registered$")
+
+    @Then("^verify that the 'Machine' was registered$")
     public void theMachineWasRegistered() {
 
         String URL = CommonEvents.getCurrentUrl();
         Assert.assertEquals(URL, "http://localhost:4200/machines/create" );
     }
 
-    @Then("^The machine was edited$")
+    @Then("^verify that the 'Machine' was edited$")
     public void theMachineWasEdited() {
 
         String URL = CommonEvents.getCurrentUrl();
         Assert.assertEquals(URL, "http://localhost:4200/machines/update" );
     }
 
-    @Then("^The machine was deleted$")
+    @Then("^verify that the 'Machine' was deleted$")
     public void theMachineWasDeleted() {
         String URL = CommonEvents.getCurrentUrl();
         Assert.assertEquals(URL, "http://localhost:4200/machines/list" );

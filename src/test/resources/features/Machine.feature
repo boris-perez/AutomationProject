@@ -1,17 +1,17 @@
 Feature: machine
 
   Background:
-    Given The user enter to home
-    And The user clicks to machine section
+    Given 'Care4You' page is loaded
+    And click on 'Machine' option from the 'Top Menu' of the main page
 
-  Scenario: The user will register a machine
-    Given The user clicks to registration section
-    Then The machine was registered
+  Scenario:  Register a machine
+    Given click on 'Register new machine' from lateral menu in 'Machine' page
+    Then verify that the 'Machine' was registered
 
-  Scenario: The user will edit a machine
-    Given The user clicks edit option in list of machines
-    Then The machine was edited
+  Scenario: Edit a machine
+    Given click on 'edit' option from 'list of machine' in the 'Machine' page
+    Then verify that the 'Machine' was edited
 
-  Scenario: The user will delete a machine
-    Given The user clicks delete a machine in list of machines
-    Then The machine was deleted
+  Scenario: Delete a machine
+    Given click on 'delete' option from 'list of machine' in the 'Machine' page
+    Then verify that the 'Machine' was deleted
